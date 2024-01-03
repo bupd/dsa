@@ -1,8 +1,24 @@
+/*
+
+Given a string S consisting of the characters 0, 1 and 2. 
+Your task is to find the length of the smallest substring of string S that 
+contains all the three characters 0, 1 and 2. 
+If no such substring exists, then return -1.
+
+*/
+
+
 public class Main {
 
     // Function to find the length of the smallest substring containing 0, 1, and 2
     static int smallestSubstring(String s) {
         int n = s.length();
+
+        // Check if the input is less than 3 and return false.
+        if (n < 3) {
+            return -1;
+        }
+        
         int minlength = Integer.MAX_VALUE;
         int start = 0; // This holds the left side of the window of the index.
         int end = 0; // This holds the right side of the window of the index.
@@ -32,7 +48,7 @@ public class Main {
         }
 
 
-        return minlength;
+       return (minLength == Integer.MAX_VALUE) ? -1 : minLength;;
     }
 
     // Main method to test the function
